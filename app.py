@@ -36,12 +36,12 @@ def predict():
 
     prediction=model.predict([[pm10,pm25,so2,co,o3,no2]])
     output=prediction[0]
-    if prediction[0]==0:
-        output=="Bagus"
-    elif prediction[0]==1:
-        output=="Sedang"
-    elif prediction[0]=="2":
-        output=="Jelek"
+#     if prediction[0]==0:
+#         output=="Bagus"
+#     elif prediction[0]==1:
+#         output=="Sedang"
+#     elif prediction[0]=="2":
+#         output=="Jelek"
 
     return render_template('deploy.html',air_quality=output)
 if __name__=='__main__':
