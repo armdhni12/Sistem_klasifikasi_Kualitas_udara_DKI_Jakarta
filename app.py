@@ -21,20 +21,20 @@ def predict():
 
     data=[]
     #add data from form values
-    data.append(float(pm10))
-    data.append(float(pm25))
-    data.append(float(so2))
-    data.append(float(co))
-    data.append(float(o3))
-    data.append(float(no2))
-#     pm10=int(request.form['pm10'])
-#     pm25=int(request.form['pm25'])
-#     so2=int(request.form['so2'])
-#     co=int(request.form['co'])
-#     o3=int(request.form['o3'])
-#     no2=int(request.form['no2'])
+#     data.append(float(pm10))
+#     data.append(float(pm25))
+#     data.append(float(so2))
+#     data.append(float(co))
+#     data.append(float(o3))
+#     data.append(float(no2))
+    pm10=int(request.form['pm10'])
+    pm25=int(request.form['pm25'])
+    so2=int(request.form['so2'])
+    co=int(request.form['co'])
+    o3=int(request.form['o3'])
+    no2=int(request.form['no2'])
 
-    prediction=model.predict([data])
+    prediction=model.predict([[pm10.values(),pm25.values(),so2.values(),co.values(),o3.values(),no2.values()])
     output=prediction[0]
 #     if prediction[0]==0:
 #         output=="Bagus"
